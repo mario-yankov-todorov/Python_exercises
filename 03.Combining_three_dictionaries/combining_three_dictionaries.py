@@ -36,7 +36,7 @@ if __name__ == '__main__':
         key, value = item
         # To align the output data
         n = 20 - len(key)
-        equal_sign = '-'*n
+        equal_sign = '-' * n
         # Print output data
         print(f'{key} {equal_sign}> {value}')
     print('*** *** *** *** *** *** *** *** *** *** *** ***') 
