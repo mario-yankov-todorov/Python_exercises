@@ -32,19 +32,22 @@ if __name__ == '__main__':
         'q' : quit_app
     }
 
-    # User inputs
-    num_1   = float(input('Please enter the first number ---> '))
-    num_2   = float(input('Second number -------------------> '))
-    operand =       input('Operand(+,-,*,/,//) or quit(q) --> ')
-    # -----------------------------------------------------------------------------------
+    operand = ''
+    while (operand != 'q'):
+        # User inputs
+        num_1   = float(input('Please enter the first number ---> '))
+        num_2   = float(input('Second number -------------------> '))
+        operand =       input('Operand(+,-,*,/,//) or quit(q) --> ')
+        # -----------------------------------------------------------------------------------
 
-    if operand in actions:
-        result = actions[operand]()
-    else:
-        result = (f'Unknown Command: {operand}')
+        if operand in actions:
+            result = actions[operand]()
+        else:
+            result = (f'Unknown Command: {operand}')
 
 
-    print('*** *** *** *** *** *** *** *** *** *** *** ***') 
-    print(f'Result is equal to --------------> {result}')
-    print('*** *** *** *** *** *** *** *** *** *** *** ***')
-    print('--- --- --- --- --- --- --- --- --- --- --- ---') 
+        print('*** *** *** *** *** *** *** *** *** *** *** ***') 
+        print(f'Result is equal to --------------> {result}')
+        print('*** *** *** *** *** *** *** *** *** *** *** ***')
+        print('--- --- --- --- --- --- --- --- --- --- --- ---') 
+        print('') 
