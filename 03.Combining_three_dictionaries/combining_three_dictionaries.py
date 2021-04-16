@@ -38,5 +38,5 @@ if __name__ == '__main__':
         n = 20 - len(key)
         number_of_characters = '-' * n
         # Print output data
-        print(f'{key} {sign}> {value}')
+        print(f'{key} {number_of_characters}> {value}')
     print('*** *** *** *** *** *** *** *** *** *** *** ***') 
