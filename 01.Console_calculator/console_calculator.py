@@ -50,7 +50,3 @@ if __name__ == '__main__':
             print(stars, f' Result is equal to ----> {result}', stars, sep = '\n')
         else:
             print(f'Unknown Command: {operand}')
-
-
-
-        print('') 
