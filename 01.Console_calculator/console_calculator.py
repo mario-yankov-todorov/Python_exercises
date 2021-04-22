@@ -1,23 +1,25 @@
 # Functions
-def addition():
+def addition(num_1, num_2):
     return num_1 + num_2
 
-def subtrction():
+def subtrction(num_1, num_2):
     return num_1 - num_2
 
-def multiplication():
+def multiplication(num_1, num_2):
     return num_1 * num_2
 
-def division():
+def division(num_1, num_2):
     return num_1 / num_2
 
-def floor_division():
+def floor_division(num_1, num_2):
     return num_1 // num_2
 
-def quit_app():
-    print('*** *** *** *** *** *** *** *** *** *** *** ***') 
-    print('Quit Editor!')
-    print('*** *** *** *** *** *** *** *** *** *** *** ***') 
+def quit_app(*args):
+    msg = '''*** *** *** *** *** *** *** *** *** *** *** ***
+Quit Editor 
+*** *** *** *** *** *** *** *** *** *** *** ***'''
+    ('') 
+    print(msg)
     quit()
 # -----------------------------------------------------------------------------------
 
@@ -33,21 +35,22 @@ if __name__ == '__main__':
     }
 
     operand = ''
-    while (operand != 'q'):
+    stars = ' *** ' * 7
+    while True:
         # User inputs
+        operand =       input('Operand(+,-,*,/,//) or quit(q) --> ')
+        if 'q' in operand: quit_app()
+        
         num_1   = float(input('Please enter the first number ---> '))
         num_2   = float(input('Second number -------------------> '))
-        operand =       input('Operand(+,-,*,/,//) or quit(q) --> ')
         # -----------------------------------------------------------------------------------
 
         if operand in actions:
-            result = actions[operand]()
+            result = actions[operand](num_1, num_2)
+            print(stars, f' Result is equal to ----> {result}', stars, sep = '\n')
         else:
-            result = (f'Unknown Command: {operand}')
+            print(f'Unknown Command: {operand}')
 
 
-        print('*** *** *** *** *** *** *** *** *** *** *** ***') 
-        print(f'Result is equal to --------------> {result}')
-        print('*** *** *** *** *** *** *** *** *** *** *** ***')
-        print('--- --- --- --- --- --- --- --- --- --- --- ---') 
+
         print('') 

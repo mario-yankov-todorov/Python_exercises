@@ -1,39 +1,35 @@
-def are_there_two_values_equal_to_Z (list_with_numbers, num_Z):\
+def check_values(list_num, num_z):
     
-    list_for_numbers = []   
-    for index in range(0, len(list_with_numbers)):
-        temp = num_Z - list_with_numbers[index]
-        if(temp in list_for_numbers):
-            return f'Yes, the values are {temp} and {list_with_numbers[index]}!'        
-        list_for_numbers.append(list_with_numbers[index])
+    new_list = [] 
+    n = len(list_num)
 
-    return 'No, there are no such values!'
+    for index in range(n):
+        temp = num_z - list_num[index]
+        if temp in new_list:
+            return f'Yes!'        
+        new_list.append(list_num[index])
+
+    return 'No!'
 
 if __name__ == '__main__':
     # User inputs 
 
-    list_length         = int(input('Please enter the length ot the list ---> '))
-    list_with_numbers   = []
-    next_number         = 1
+    list_length = int(input('Please enter the length ot the list ---> '))
+    list_num  = []
+    next_number = 1
     for i in range(list_length):        
-        x       = int(input(f'Value number {next_number} ---------------------------> '))
+        x = int(input(f'Value number {next_number} ---------------------------> '))
         next_number += 1
-        list_with_numbers.append(x)
-    num_Z       = int(input('Integer Z ------------------------------> '))
+        list_num.append(x)
+    num_z = int(input('Integer Z ------------------------------> '))
     # -----------------------------------------------------------------------------------
 
-    # Create an empty dictionary
+    the_answer  = check_values(list_num, num_z)
 
-    
-    the_answer  = are_there_two_values_equal_to_Z(list_with_numbers, num_Z) 
+    stars = ' *** ' * 7
+    msg_1 = ''' Does the array contain two values for
+ which the condition a[x] + a[y] = Z'''
+    msg_2 = f' is fulfilled? --------------------------> {the_answer}'
 
 
-    print(list_with_numbers)
-
-
-    print('*** *** *** *** *** *** *** *** *** *** *** ***') 
-    print('Does the array contain two values for ')
-    print('which the condition a[x] + a[y] = Z')
-    print(f'is fulfilled? --------------------------> {the_answer}')
-    print('*** *** *** *** *** *** *** *** *** *** *** ***')
-    print('--- --- --- --- --- --- --- --- --- --- --- ---') 
+    print(stars, msg_1, msg_2, stars, sep = '\n') 
